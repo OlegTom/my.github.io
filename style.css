@@ -3,7 +3,7 @@ body{
 	background-image: url("img/1.jpg");
 	background-attachment: fixed;	
 }
-.time, .exchange{
+#doc_time, .exchange{
 	margin: 10px;	
 }
 #doc_time{
