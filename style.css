@@ -1,7 +1,8 @@
 
 body{	
 	background-image: url("img/1.jpg");
-	background-attachment: fixed;	
+	background-attachment: fixed;
+	overflow-x: hidden;
 }
 #doc_time, .exchange{
 	margin: 10px;	
