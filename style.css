@@ -1,0 +1,243 @@
+
+body{	
+	background-image: url("img/1.jpg");
+	background-attachment: fixed;	
+}
+.time, .exchange{
+	margin: 10px;	
+}
+#doc_time{
+	background-color: #E1F8D0 ;
+	padding: 35px 120px 35px 150px;	
+	border: solid 1px darkblue;
+	border-radius: 20px;
+	font-size: 3rem;
+}
+.top{	
+	display: flex;
+}
+.logo img{
+	width: 130px;
+	height: 130px;
+	float: left;
+	margin: 20px 5px 5px 30px;
+}
+.logo h2{
+	margin: 50px 0 10px 0;
+}
+.logo p{
+	display: flex;
+	float: right;
+	font-size: 2em;
+	font-weight: 400;
+	margin: 15px;
+	margin-top: 60px;
+}
+h1,h2{
+	text-align: center;
+}
+.exchange{
+	background-color: #E1F8D0 ;
+	padding: 10px 130px 10px 100px;
+	font-size: 1.1em;
+	border: solid 1px darkblue;
+	border-radius: 20px;
+}
+.undernav{	
+	padding: 15px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap; 
+}
+.map{	
+	background-color: #3fe8e8;	
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+	border: solid 1px darkblue;
+	border-radius: 5px;	
+	width: auto;
+	position: relative;
+	overflow: hidden;
+}
+.nav-item{
+	margin-left: 20px;
+}
+.navbar-light .navbar-nav .nav-link,.navbar-brand{
+	color: brown;
+	cursor: pointer;
+	font-size: 20px;
+}
+.nav-link:hover{
+	border: solid 1px black;
+	border-radius: 5px;
+	background: lightgrey;
+
+}
+.dropdown-menu{
+	font-size: 15px;
+}
+.dropdown-menu:hover{
+	font-size: 15px;
+	background: lightgrey;
+	border: solid 1px grey;
+	border-radius: 5px;
+}
+.carousel img{
+	border: solid 2px orange;
+	width: 100%;
+	height: auto;
+}
+.carousel-control-prev-icon {
+	width: 60px;
+	height: 60px;
+    background-image: url(img/left.png);   
+}
+.carousel-control-next-icon {
+	width: 60px;
+	height: 60px;
+    background-image: url(img/right.png);
+}
+.searchtour{
+ 	margin: 2em;   
+    font-size: 25px; 
+}
+.searchtour h1{
+ 	color:#F97300;
+ 	margin: 2em; 
+}
+.hotel p{
+	font-size: 15px;
+	text-align: justify;
+	margin: 5px;
+}
+.tours,.team,.reports{
+	font-family: 'Courgette', cursive;
+	margin: 1em;
+	padding: 1em;
+	position: relative;
+}
+
+.team{
+	font-family: sans-serif;
+	margin-top: 20px;
+}
+.team h3{
+	text-align: center;
+	font-size: 30px;
+}
+.team h4{
+	font-weight: 600;
+}
+.team p{
+	font-size: 20px;
+}
+.hotel h1{
+	color: #f97300;
+	margin: 1em;
+}
+.hotel img{
+	display: flex;
+	justify-content: center;
+	margin: 60px 20px 0px 40px;
+	height: 300px;
+	border-radius: 50%;
+}
+.tours h1,.team h1,.reports h1{
+ 	color:#F97300;
+ 	margin: 1em; 
+}
+.tours img{
+	height: auto;
+	padding: 5px;
+}
+.tours p{
+	font-size: 1em;
+	height: auto;   
+    padding: 5px;
+}
+.card{
+	margin-top: 20px
+}
+.card-body{
+	display: grid;
+	width: auto;
+}
+.card-body p{
+	font-size: 10px;
+}
+.card-body div{
+	margin-top: 25px;
+	background-color: lightgrey;
+	border-radius: 5px;
+	font-size: 2em;
+	text-align: right;
+}
+#teams p{
+	font-size: 14px;
+}
+.report{
+	margin-top: 20px;
+}
+.reports img, .team img{
+	width: 100%;
+	height: auto;
+	margin-top: 5px;
+}
+.reports p{
+	text-align: center;
+	margin-top: 20px;
+	font-size: 18px;
+}
+.reports div{
+	font-size: 14px;
+}
+.contact-form{
+	margin: 6em 0;
+	position: relative;
+	font-size: 15px;
+}
+.contact-form h1{
+	padding:2em 1px;
+ 	color: #F97300;
+}
+.up{
+	font-size: 2em;
+	display: flex;
+	justify-content: center;
+	margin: 50px;
+}
+footer{
+	background-color: #ffff99;
+	border-top: 3px solid black;
+}
+footer p{
+	font-size: 12px;
+	padding: 3em;
+	word-spacing: 0.2em;
+}
+
+@media screen and (max-width: 1000px) {     
+    .logo{
+    	font-size: 0.7em;  	
+    }
+    .tours p{
+		font-size: 1.5em;
+	}
+}
+@media screen and (max-width: 650px) {    
+    .logo{
+    	font-size: 0.5em;
+    }
+    .tours p{
+		font-size: 1.4em;
+	}
+}
+@media screen and (max-width: 450px) {    
+    .logo{
+    	font-size: 0.3em;
+    }
+    .tours p{
+	font-size: 1.3em;
+	}    
+}

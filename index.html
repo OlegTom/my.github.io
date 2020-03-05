@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Libre+Baskerville|Lobster&display=swap" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+   
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <title>28.02.20 Финальная работа</title>
+  </head>
+  <body onload="getCourses()">
+    <div class="top">
+      <div class="logo">
+        <img src="img/logo.jpg" alt="лого">
+        <a class="navbar-brand" href="#">
+        <h2>Турагенство "Отдых нам <br/>
+          не только сниться"</h2></a>
+        <p>&#9990; MTS 095-123-45-67</p>
+        <p>&#9990; KS 067-123-45-67</p>
+        <p>&#9990; LIFE 063-123-45-67</p>        
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light">    
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+     </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">                
+          <li class="nav-item">
+            <a class="nav-link" data-value="hotel" href="#">Отели</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-value="tours" href="#">Автобусные туры</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-value="searchtour" href="#">Поиск туров</a>
+          </li>         
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Страны</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Европа</a>
+              <a class="dropdown-item" href="#">Азия</a>
+              <a class="dropdown-item" href="#">Африка</a>
+              <a class="dropdown-item" href="#">Австралия</a>
+              <a class="dropdown-item" href="#">Северная Америка</a>
+              <a class="dropdown-item" href="#">Южная Америка</a>
+              <a class="dropdown-item" href="#">Океания</a>
+              <a class="dropdown-item" href="#">Антарктида</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Раннее бронирование</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Горящие туры</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Египет</a>
+              <a class="dropdown-item" href="#">Турция</a>
+              <a class="dropdown-item" href="#">Греция</a>
+              <a class="dropdown-item" href="#">Польша</a>
+              <a class="dropdown-item" href="#">Чехия</a>
+              <a class="dropdown-item" href="#">Катар</a>
+              <a class="dropdown-item" href="#">Кипр</a>
+              <a class="dropdown-item" href="#">Тайланд</a>
+              <a class="dropdown-item" href="#">ОАЭ</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Туры по Украине</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-value="team" href="#">Франчайзинг</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-value="reports" href="#">Отзывы</a>
+          </li>      
+        </ul>    
+      </div>
+    </nav>
+    <div class="undernav">
+      <div id="doc_time"></div>
+      <script>
+        function clock() {
+          var d = new Date();
+          var month_num = d.getMonth();
+          var day = d.getDate();
+          var hours = d.getHours();
+          var minutes = d.getMinutes();
+          var seconds = d.getSeconds();
+          month=["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+          if (day <= 9) day = "0" + day;
+          if (hours <= 9) hours = "0" + hours;
+          if (minutes <= 9) minutes = "0" + minutes;
+          if (seconds <= 9) seconds = "0" + seconds;
+          date_time = day + "." + month[month_num] + "." + d.getFullYear() + " г.   "+ hours + ":" + minutes + ":" + seconds;
+          if (document.layers) {
+            document.layers.doc_time.document.write(date_time);
+            document.layers.doc_time.document.close();
+          }
+          else document.getElementById("doc_time").innerHTML = date_time;
+          setTimeout("clock()", 1000);
+        }
+      </script>
+      <script>clock();</script>
+      <div class="exchange">
+          <div>
+            <label for="amount">Сумма</label>
+            <input type="text" id="amount" />
+            <span style="font-weight:bold;">грн.</span>
+          </div>      
+          <div>
+            <label for="currencyCode">Конвертировать в:</label>
+            <select id="currencyCode"></select>
+          </div>
+          <div>
+            <label for="convertedAmount">Пересчитанная сумма</label>
+            <input type="text" id="convertedAmount" readonly />
+          </div>
+          <button onclick="calculate()">Пересчитать</button>
+        </div>
+        <div class="tiles" style="display: none;">
+          <ul class="products-list"></ul>
+        </div>    
+      </div>
+    <hr>
+    <div class="carousel">
+      <div class="container text-center">   
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">          
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/Sri-Lanka.jpg" alt="шри-ланка">
+            </div>
+            <div class="carousel-item">
+              <img src="img/walley.jpg" alt="долина">
+            </div>
+            <div class="carousel-item">
+              <img src="img/sun.jpg" alt="закат">
+            </div>
+            <div class="carousel-item">
+              <img src="img/goldgate.jpg" alt="турция">
+            </div>
+            <div class="carousel-item">        
+              <img src="img/mounting.jpg" alt="греция">
+            </div>
+            <div class="carousel-item">         
+              <img src="img/londeye.jpg" alt="португалия">
+            </div>
+            <div class="carousel-item">        
+              <img src="img/wfall.jpg" alt="италия">
+            </div>
+            <div class="carousel-item">        
+              <img src="img/hotel.jpg" alt="танзания">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only" >Next</span>
+          </a>
+        </div>   
+      </div>
+    </div>
+        
+    <div class="hotel" id="hotel">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <img src="img/5stars.jpg" alt="sign hotel 5 stars">
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12">       
+          <h1>Отели</h1>
+          <p>Для многих путешественников - как начинающих, так и вполне опытных - основной, если не единственной характеристикой при выборе отеля является количество его звезд. Известно, что общепринятая классификация отелей обозначает уровень комфорта и сервиса, предоставляемых в отеле, и варьируется в диапазоне от 1 до 5 «звезд». Однако, не стоит полностью полагаться на количество звезд при выборе и бронировании отеля, и считать их единственным мерилом комфорта того места, где вам предстоит остановиться на отдых.</p>
+          <p>Разумеется, уровень удобств зависит от страны назначения и менеджмента отеля. К сожалению, «звездность», как и цена, не является гарантией того, что тот или иной сервис будет предоставлен на высшем уровне, многое зависит от готовности менеджеров отеля пойти вам навстречу. При выборе нужно исходить из тех критериев, которые важны лично вам – например, близость к пляжу или расположение в старой части города, доступность общественного транспорта, наличие рядом ресторанов. Отель, отвечающий требованиям путешественника, - лучшая гарантия хорошего отдыха, а подходящий вариант обязательно найдется!</p>
+          <br>
+          <a target="_blank" href="https://lepremier.com.ua/chto-oznachayut-zvezdi-oteley.html" class="btn btn-primary">Больше информации здесь...</a>
+        </div>
+      </div>
+    </div>
+    <div class="tours" id="tours">
+      <div class="container">
+        <h1 class="text-center">Автобусные туры</h1>
+        <div class="row">
+          <div class="col-xl-2 col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img src="img/armen.jpg" class="card-img-top" alt="Армания">
+              <div class="card-body">
+                <h5 class="card-title">Армения - страна камней, вина, древних монастырей и гостеприимных людей</h5>
+                <p class="card-text">Армения - одно их тех мест, которое предоставляет возможность ощутить, что такое то самое знаменитое кавказское гостеприимство.</p>
+                <div>7 ночей<br>250 $ / чел.</div><br>
+                <a target="_blank" href="https://rg.ru/2009/01/19/armenia.html" class="btn btn-primary">Подробнее...</a>  
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img src="img/england.jpg" class="card-img-top" alt="Англия">
+              <div class="card-body">
+                <h5 class="card-title">Великая и прекрасная Великобритания</h5>
+                <p class="card-text">Великобритания ассоциируется у нас с лондонской сдержанностью в эмоциях, изысканном стиле, истинном аристократизме, отменным вкусом и многовековыми традициями.</p>
+                <div>5 ночей<br>390 $ / чел.</div><br>
+                <a target="_blank" href="https://www.tpg.ua/ru/country/tab-country/?ct=93FA60A44CCD569311E313452D8D1841" class="btn btn-primary">Подробнее...</a>  
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img src="img/rome.jpg" class="card-img-top" alt="Рим">
+              <div class="card-body">
+                <h5 class="card-title">«Город на Семи Холмах»</h5>
+                <p class="card-text">В настоящее время Рим относится к центру туризма и, безусловно, является в Италии одним из самых красивых городов. В этом городе турист в полной мере сможет ознакомиться со всеми историческими и культурными достопримечательностями.</p>
+                <div>7 ночей<br>410 $ / чел.</div><br>
+                <a target="_blank" href="http://www.vokrugsveta.ru/encyclopedia/index.php?title=%D0%A0%D0%B8%D0%BC" class="btn btn-primary">Подробнее...</a>  
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img src="img/spain.jpg" class="card-img-top" alt="Испания">
+              <div class="card-body">
+                <h5 class="card-title">Испания - страна «вечного праздника»</h5>
+                <p class="card-text">Солнечная и жизнерадостная Испания ждет туристов на пляжи Средиземного моря, горнолыжные курорты и зимний отдых на Тенерифе. Развлечения и достопримечательности от Мадрида до Барсы.</p>
+                <div>6 ночей<br>420 $ / чел.</div><br>
+                <a target="_blank" href="https://horosho-tam.ru/ispaniya" class="btn btn-primary">Подробнее...</a>  
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img src="img/venice.jpg" class="card-img-top" alt="Венеция">
+              <div class="card-body">
+                <h5 class="card-title">Венеция - город на воде. Город каналов и восхитительной архитектуры</h5>
+                <p class="card-text">Это город великолепных дворцов и множества мостов, соединяющих разделенные каналами острова. Это самый романтический и безмятежный город не только Адриатики, но и мира.</p>
+                <div>7 ночей<br>430 $ / чел.</div><br>
+                <a target="_blank" href="http://www.biancoloto.com/venezia.html" class="btn btn-primary">Подробнее...</a>  
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img src="img/portu.jpg" class="card-img-top" alt="Португалия">
+              <div class="card-body">
+                <h5 class="card-title">Португалия. Край Европы.</h5>
+                <p class="card-text">До неё неблизкий путь, но то, что ждёт вас здесь, вы не найдёте больше нигде – широкие океанские пляжи и архитектурные красоты Лиссабона, сосновые и эвкалиптовые рощи, прекрасные замки и дворцы</p>
+                <div>5 ночей<br>400 $ / чел.</div><br>
+                <a target="_blank" href="https://www.tpg.ua/ru/country/tab-country/?ct=93FA60A44CCD569311E3134527937B1F" class="btn btn-primary">Подробнее...</a>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="searchtour" id="searchtour">
+      <h1 class="text-center">Поиск туров</h1>
+      <div class="footer__heading"><center>Мы предлагаем Вам уникальную возможность открыть мир вместе с нами... </center></div>
+      <br>
+      <ul>
+        <li>
+          <a href="https://www.poehalisnami.ua/tour/gornolyzhnye-tury">Горнолыжные туры</a>
+        </li>
+        <li>
+          <a href="https://www.poehalisnami.ua/tour/excursion">Автобусные туры</a>
+        </li>
+        <li><a href="https://www.poehalisnami.ua/tour/otdyh-na-more">Отдых на море</a>
+        </li>
+        <li><a href="https://www.poehalisnami.ua/tour/ekzoticheskie-tury">Экзотические туры</a>
+        </li>
+        <li><a href="https://www.poehalisnami.ua/tour/rannee-bronirovanie">Раннее бронирование</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="team" id="team">
+      <h1 class="text-center">Франчайзинг</h1>
+      <div class="container">
+      <h3>Присоединяйтесь к профессионалам! Откройте свое туристическое агентство "Отдых нам не только снится!"</h3>
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-6 item">
+            <div class="card">
+              <img class="news-card__thumbnail lazyloaded" data-src="https://img.poehalisnami.ua/contentdata/blog/b412afd2-b8ef-4a58-934c-d76420eab84c/0franshizaplan.jpg" src="https://img.poehalisnami.ua/contentdata/blog/b412afd2-b8ef-4a58-934c-d76420eab84c/0franshizaplan.jpg">
+                <div class="card-body" id="teams">
+                  <h4 class="card-title">Что такое франшиза?</h4>          
+                  <p class="card-text">В мире покупка франшиз – давняя практика ведения бизнеса. В Украину же международные «столпы» франчайзинга пришли относительно недавно. В основном это бренды, связанные с общественным питанием,...
+                  </p>
+                  <div class="news-card__link"> <a target="_blank" href="https://www.poehalisnami.ua/open/chto-takoe-franshiza">Читать далее</a></div>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 item">
+            <div class="card">
+              <img class="news-card__thumbnail ls-is-cached lazyloaded" data-src="https://img.poehalisnami.ua/contentdata/blog/1f18b4f6-1d7b-4c62-bd97-201a5c34a786/0kak-otkrit-agentstvo1.jpeg" src="https://img.poehalisnami.ua/contentdata/blog/1f18b4f6-1d7b-4c62-bd97-201a5c34a786/0kak-otkrit-agentstvo1.jpeg">
+              <div class="card-body" id="teams">
+                  <h4 class="card-title">Как открыть турагентство?</h4>
+                <p class="card-text">Вас захватывают путешествия? Трансформируйте любимое увлечение из вида отдыха в способ заработка. Для создания туристической фирмы от предпринимателя требуются минимальные вложения финансов.</p>
+                <div class="news-card__link"> <a target="_blank" href="https://www.poehalisnami.ua/open/kak-otkrit-turagentstvo">Читать далее</a></div>
+              </div>    
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 item">
+            <div class="card">
+              <img class="news-card__thumbnail ls-is-cached lazyloaded" data-src="https://img.poehalisnami.ua/contentdata/blog/c08b98ff-fe87-45cb-8da7-8dd6d8e88853/0franshizaarrow.jpg" src="https://img.poehalisnami.ua/contentdata/blog/c08b98ff-fe87-45cb-8da7-8dd6d8e88853/0franshizaarrow.jpg">
+              <div class="card-body" id="teams">
+                  <h4 class="card-title">Бизнес по франшизе</h4>
+                <p class="card-text">Бизнес по франшизе, или франчайзинг – это популярная ныне система деловых взаимоотношений, когда между двумя самостоятельными сторонами заключается договор платного предоставления...</p>
+                <div class="news-card__link"> <a target="_blank" href="https://www.poehalisnami.ua/open/biznes-po-franshize">Читать далее</a></div>
+              </div>    
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+    <div class="reports" id="reports">
+      <div class="container">
+        <h1 class="text-center">Отзывы</h1>
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-6 item">
+            <p>Диана</p>
+            <img src="img/diana.jpg" class="img-fluid" alt="девушка на помосте">
+              <div class="report">Огромное спасибо за качественную организацию нашего отдыха! Путешествуем только с этим агентством, доверяем только вам, ведь все всегда на высшем уровне) отдельная благодарность Софии, подобрала все по нашим пожеланиям, подсказала интересные места, мы остались очень довольны)
+              </div>              
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 item">
+            <p>Ярослав</p>
+            <img src="img/yarik.jpg" class="img-fluid" alt="парень на квадроцикле">
+              <div class="report">
+               Відпочивав один в Шарм-ель-шейх(Єгипет) було круто море емоцій.Дякую Ларисі за підбір Одним словом скажу:Там треба бути і відчувати дуже багато відчувати.
+              </div>              
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 item">
+            <p>Ульяна</p>
+            <img src="img/uliana.jpg" class="img-fluid" alt="парочка на горе">
+              <div class="report">
+               Добрый день!) Спасибо огромное за шикарный отдых!) Летали на Кубу в Варадеро с 17.01 по 30.01.2020. Вчера прилетели) Гостишка супер, океан нельзя описать словами!) Везде встречали, все вовремя!) Вообщем отдохнули замечательно!) 
+              </div>              
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 item">
+          <p>Наталья</p>
+            <img src="img/natali.jpg" class="img-fluid" alt="девушка в турции">
+            <div class="report">
+            Приятно, что люди работают в команде! Это важно. Отсюда и результат. Помогли, посоветовали, все рассказали. Путешествие мне очень понравилось, надеюсь второе и третье. Спасибо менеджерам Инне, Елене, Яне, Дарье. Желаю процветания этой компании, радовать нас интересными турами!
+            </div>              
+          </div>
+        </div>
+      </div>
+    </div>    
+    <div class="contact-form">
+      <div class="container">          
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <h1>Заполните пожалуйста форму, чтобы с Вами мог связаться наш оператор</h1>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-12 right">
+            <form>
+              <fieldset>
+                <legend>Коротко о себе:</legend>
+              <p><input type="text" name="author" id="author" value="" size="25" />
+                <medium> Ваше имя</medium></p>
+                <p><input type="text" name="email" id="email" value="" size="25" />
+                  <medium> Ваш Е-Mail</medium></p>
+                  <p><textarea name="comment" id="comment" cols="48" rows="8"> </textarea></p>
+                  <p><button type="submit" class="btn btn-primary">Оставить заявку</button></p>
+              </fieldset>
+            </form>
+          </div>
+        </div>        
+      </div>
+    </div>
+    <div class="map">
+      <div>
+        <iframe width="1200" height="200" src="https://maps.google.com/maps?width=1200&amp;height=200&amp;hl=en&amp;q=%D0%9A%D1%80%D0%B0%D0%BC%D0%B0%D1%82%D0%BE%D1%80%D1%81%D0%BA+(GoogleMaps)&amp;ie=UTF8&amp;t=k&amp;z=3&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        <div style="width: 80%; bottom: 10px; left: 0; right: 0; color: #000; text-align: center;">
+        </div>
+      </div><br />
+    </div>
+    <div class="up">
+    <button  type="button" class="btn btn-outline-warning"><a href="#">Наверх</a></button>
+    </div>
+    <footer>
+      <p>Oleg Thomakh, 2020. &#9786;all rights will be alright...</p>    
+    </footer>
+    
+    <script crossorigin="anonymous" src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+  </body>
+</html>
