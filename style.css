@@ -8,10 +8,11 @@ body{
 }
 #doc_time{
 	background-color: #E1F8D0 ;
-	padding: 35px 120px 35px 150px;	
+	padding: 30px 120px 20px 150px;	
 	border: solid 1px darkblue;
 	border-radius: 20px;
 	font-size: 3rem;
+	height: 115px;
 }
 .top{	
 	display: flex;
