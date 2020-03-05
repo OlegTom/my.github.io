@@ -158,6 +158,9 @@ h1,h2{
 	height: auto;   
     padding: 5px;
 }
+.tours h5{
+	font-weight: 600;
+}
 .card{
 	margin-top: 20px
 }
